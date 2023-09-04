@@ -33,6 +33,14 @@ public class PlayerMove implements SettableMove {
     return result;
   }
 
+  public void setResult(final Result result) {
+    this.result = result;
+
+    // update result counts
+    resultCounts.putIfAbsent(result, 0);
+    resultCounts.put(result, resultCounts.get(result) + 1);
+  }
+
   public Status getStatus() {
     return status;
   }
@@ -46,14 +54,6 @@ public class PlayerMove implements SettableMove {
     player.move(this);
 
     return status;
-  }
-
-  public void handle(final Result result) {
-    this.result = result;
-
-    // update result counts
-    resultCounts.putIfAbsent(result, 0);
-    resultCounts.put(result, resultCounts.get(result) + 1);
   }
 
   public int getCount(final Result result) {

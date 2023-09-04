@@ -14,10 +14,10 @@ public class PlayerMoveTest {
     HumanPlayer player = new HumanPlayer("Alex", moveSupplier);
     PlayerMove playerMove = new PlayerMove(player);
 
-    playerMove.handle(Result.WIN);
-    playerMove.handle(Result.TIE);
-    playerMove.handle(Result.LOST);
-    playerMove.handle(Result.WIN);
+    playerMove.setResult(Result.WIN);
+    playerMove.setResult(Result.TIE);
+    playerMove.setResult(Result.LOST);
+    playerMove.setResult(Result.WIN);
 
     assertEquals(2, playerMove.getCount(Result.WIN));
     assertEquals(1, playerMove.getCount(Result.TIE));

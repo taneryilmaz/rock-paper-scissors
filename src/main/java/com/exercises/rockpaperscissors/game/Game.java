@@ -36,8 +36,8 @@ public class Game {
    * Calculate move results of players.
    */
   public void calculateMoveResults() {
-    playerMove1.handle(compare(playerMove1.getMove(), playerMove2.getMove()));
-    playerMove2.handle(compare(playerMove2.getMove(), playerMove1.getMove()));
+    playerMove1.setResult(compare(playerMove1.getMove(), playerMove2.getMove()));
+    playerMove2.setResult(compare(playerMove2.getMove(), playerMove1.getMove()));
   }
 
   public void printMoves() {
